@@ -15,7 +15,7 @@ node{
    sh "${mavenHome}/bin/mvn deploy"
  }
     stage('5deploy2UAT'){
-   deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.227.129.93:8080/')], contextPath: null, war: 'target/*war'
+   deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://34.234.201.218:8080/')], contextPath: null, war: 'target/*war'
    //deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.227.129.93:8080/')], contextPath: null, war: 'target/*war'
  
       }
@@ -25,7 +25,7 @@ node{
     input message: 'Application ready for deployment, Please review and approve'
       }
           stage('7deploy2Prod'){
-   deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.227.129.93:8080/')], contextPath: null, war: 'target/*war'
+   deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://34.234.201.218:8080/')], contextPath: null, war: 'target/*war'
    //deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://54.227.129.93:8080/')], contextPath: null, war: 'target/*war'
  
       }
